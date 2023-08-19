@@ -3,14 +3,15 @@ import {MoviesProps} from "@/app/types";
 
 export default async function Home() {
  const data = await fetch(
-     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`,{next:{revalidate: 0}})
 
   const res = await data.json()
 
   console.log('Function: Home - Line 9 - ', res);
   return (
     <main >
-      Hello next 13
+
+<div className="grid gap-16 grid-cols-fluid">
       {res.results.map((movie: MoviesProps)=>(
           <Movie
           key={movie.id}
@@ -20,6 +21,7 @@ export default async function Home() {
           release_date={movie.release_date}
           />
       ))}
+</div>
     </main>
   )
 }

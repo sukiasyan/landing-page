@@ -13,7 +13,7 @@ export default function Movie({ id,
       <div>
         <h1>{title}</h1>
         <h2>{release_date}</h2>
-        <Link href={'/asd'}>
+        <Link href={`${id}`}>
           <Image src={imagePath + poster_path} width={800} height={800} alt={title}/>
         </Link>
       </div>
