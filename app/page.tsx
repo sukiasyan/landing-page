@@ -7,7 +7,7 @@ export async function generateStaticParams() {
       `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`,{next:{revalidate: 0}})
 
   const res = await data.json()
-  return res.results.map((movie: MoviesProps)=>({
+  return res.results?.map((movie: MoviesProps)=>({
   movie: movie.id.toString(),
   }))
 }
@@ -22,7 +22,7 @@ export default async function Home() {
     <main >
 
 <div className="grid gap-16 grid-cols-fluid">
-      {res.results.map((movie: MoviesProps)=>(
+      {res.results?.map((movie: MoviesProps)=>(
           <Movie
           key={movie.id}
           id={movie.id}
