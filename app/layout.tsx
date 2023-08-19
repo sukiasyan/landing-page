@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Landing Page vercel',
+  title: 'Landing Page Films',
   description: 'Simple landing page',
 }
 
