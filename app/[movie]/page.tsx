@@ -1,6 +1,9 @@
 import Image from "next/image";
 
+
+// @ts-ignore
 export default async function MovieDetail({params}) {
+  console.log('Function: MovieDetail - Line 4 - ', params);
 const {movie} = params;
   const imagePath = 'https://image.tmdb.org/t/p/original'
 
